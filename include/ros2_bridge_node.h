@@ -38,7 +38,6 @@ class ROS2BridgeNode : public rclcpp_lifecycle::LifecycleNode {
     rclcpp::Subscription<std_msgs::msg::UInt32>::SharedPtr int_sub;
     rclcpp_lifecycle::LifecyclePublisher<std_msgs::msg::UInt32>::SharedPtr int_pub;
     std::shared_ptr<CANOpenSlaveNode> canopen_slave_node = nullptr;
-    uint32_t test_int = 0;
 
     void topic_callback(std_msgs::msg::UInt32::SharedPtr) const ;
     void run_canopen_slave_node()	;

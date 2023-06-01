@@ -68,10 +68,9 @@ void ROS2BridgeNode::run_canopen_slave_node()	{
 }
 
 void ROS2BridgeNode::RPDO_callback(uint32_t value) {
-  test_int = value;
   std_msgs::msg::UInt32 msg;
   msg.data = value;
   int_pub->publish(msg);
 
-  RCLCPP_INFO(this->get_logger(), "RPDO_callback: 0x%X", test_int);
+  RCLCPP_INFO(this->get_logger(), "RPDO_callback: 0x%X", value);
 }
